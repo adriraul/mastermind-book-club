@@ -1,0 +1,38 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-brown-5, 0.5),
+      rgba($color-brown-4, 0.5)
+    ),
+    url(../img/header-image.jpg);
+  background-size: cover; /*Para que la imágen intente rellenar siempre lo que su padre (en mi caso 95vh)*/
+  background-position: top; /*Para que la img se quede siempre tocando arriba*/
+  position: relative; /*con esto funciona la posicion de las cosas de dentro del header*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*se puede personalizar por una web*/
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    height: 10rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(
+      -50%,
+      -50%
+    ); /* se transporta él en sí mismo para centrarlo, porque realmente el top y el left definen donde empieza, y ahora estaba empezando en el 50-50 pero no quiere decir centrado)*/
+    text-align: center;
+  }
+}

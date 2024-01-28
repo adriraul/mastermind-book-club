@@ -1,0 +1,15 @@
+{
+  "name": "mastermind-book-reviews",
+  "version": "1.0.0",
+  "description": "Webpage to insert the mastermind book readings reviews.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Adrián Bravo",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "sass": "^1.70.0"
+  }
+}

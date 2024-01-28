@@ -1,0 +1,206 @@
+/*
+Mis colores
+#f3eeea - rgba(243,238,234,0.5)
+#e8d7c6 - rgba(232,215,198,0.5)
+#cdb199 - rgba(205,177,153,0.5)
+#897968 - rgba(138,122,105,0.5)
+#3c352d - rgba(60,53,45,0.5)
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(60, 53, 45, 0.5),
+      rgba(138, 122, 105, 0.5)
+    ),
+    url(../img/header-image.jpg);
+  background-size: cover; /*Para que la imágen intente rellenar siempre lo que su padre (en mi caso 95vh)*/
+  background-position: top; /*Para que la img se quede siempre tocando arriba*/
+  position: relative; /*con esto funciona la posicion de las cosas de dentro del header*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*se puede personalizar por una web*/
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 10rem;
+}
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* se transporta él en sí mismo para centrarlo, porque realmente el top y el left definen donde empieza, y ahora estaba empezando en el 50-50 pero no quiere decir centrado)*/
+  text-align: center;
+}
+
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /*para que las animaciones no hagan movimientos raros al final*/
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: 2.5rem;
+
+  line-height: 1.25;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+
+  /*animation-delay: 3s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;*/
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5rem;
+  margin-bottom: 4rem;
+
+  animation-name: moveInRight;
+  animation-duration: 1s;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  80% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--white {
+  background-color: #ffffff;
+  color: #777;
+  font-weight: 600;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn--white::after {
+  background-color: white;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
