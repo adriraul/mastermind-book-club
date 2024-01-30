@@ -1,0 +1,85 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent; //esto se pone para que el border bottom que se añade en el focus no desplace las demás cosas
+    width: 90%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-brown-3;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-brown-4;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark;
+    }
+  }
+
+  &__textarea {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    border-bottom: 3px solid transparent; //esto se pone para que el border bottom que se añade en el focus no desplace las demás cosas
+    width: 90%;
+    display: block;
+    resize: none; //para que no salga lo del textarea
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-brown-3;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-brown-4;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    //esto lo estamos escribiendo así porque no queremos tocar el input, sino que es una cosa que va a aplicar al label.
+    // Se pone el + porque lo que hará será buscar el siguiente elemento al input que sea de tipo "__label". Por eso el html está en ese orden, y el label va después del input
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__textarea:placeholder-shown + &__label {
+    //esto lo estamos escribiendo así porque no queremos tocar el TEXTAREA, sino que es una cosa que va a aplicar al label.
+    // Se pone el + porque lo que hará será buscar el siguiente elemento al input que sea de tipo "__label". Por eso el html está en ese orden, y el label va después del input
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
