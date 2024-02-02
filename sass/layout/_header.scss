@@ -17,6 +17,16 @@
     0 100%
   ); /*se puede personalizar por una web*/
 
+  @include respond(tab-port) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -24,6 +34,13 @@
   }
   &__logo {
     height: 10rem;
+
+    @include respond(tab-port) {
+      height: 9rem;
+    }
+    @include respond(phone) {
+      height: 8rem;
+    }
   }
 
   &__text-box {

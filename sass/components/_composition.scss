@@ -8,19 +8,46 @@
     z-index: 10;
     transition: all 0.2s;
 
+    @include respond(tab-port) {
+      float: left;
+      position: relative;
+      width: 33.33333%;
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.4);
+    }
+
     &--p1 {
       left: 0;
       top: -4rem;
+
+      @include respond(tab-port) {
+        left: 8rem;
+        top: 4rem;
+      }
     }
 
     &--p2 {
       right: 4rem;
       top: 1rem;
+
+      @include respond(tab-port) {
+        left: 5rem;
+        top: 1rem;
+      }
     }
 
     &--p3 {
       left: 25%;
       top: 6rem;
+
+      @include respond(tab-port) {
+        left: -15rem;
+        top: 11rem;
+      }
+
+      @include respond(phone) {
+        left: -11rem;
+        top: 11rem;
+      }
     }
 
     &:hover {

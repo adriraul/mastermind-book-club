@@ -8,11 +8,22 @@
   transition: transform 0.3s;
   height: 60vh;
 
+  @include respond(tab-port) {
+    font-size: 1.8rem;
+    padding: 2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 1.9rem;
+    padding: 2.5rem;
+  }
+
   &__icon {
     font-size: 6rem;
     margin-bottom: 0.5rem;
     display: inline-block;
     background-image: linear-gradient(to right, $color-brown-5, $color-brown-4);
+    background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
   }

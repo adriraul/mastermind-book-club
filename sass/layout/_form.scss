@@ -15,6 +15,10 @@
     width: 90%;
     display: block;
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
@@ -42,6 +46,10 @@
     width: 90%;
     display: block;
     resize: none; //para que no salga lo del textarea
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
     &:focus {
       outline: none;
