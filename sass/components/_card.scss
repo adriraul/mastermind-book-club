@@ -60,15 +60,15 @@
 
     &--1 {
       background-position: 0 -11rem; //cubre el contenido que tenga la card. Si solo esta esto, coge un trozo muy pequeño porque todavía no hay contenido.
-      background-image: url(../img/meditaciones.png); //solo subimos un nivel (../) porque realmente esto estará en el styles.css una vez compilado
+      background-image: url(../public/img/meditaciones.png); //solo subimos un nivel (../) porque realmente esto estará en el styles.css una vez compilado
     }
     &--2 {
       background-position: 0 -3rem;
-      background-image: url(../img/el-arte-de-la-guerra.jpg);
+      background-image: url(../public/img/el-arte-de-la-guerra.jpg);
     }
     &--3 {
       background-position: 0 -3rem;
-      background-image: url(../img/principios-negro.jpg);
+      background-image: url(../public/img/principios-negro.jpg);
     }
   }
 

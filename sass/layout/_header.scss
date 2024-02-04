@@ -5,7 +5,7 @@
       rgba($color-brown-5, 0.5),
       rgba($color-brown-4, 0.5)
     ),
-    url(../img/header-image.jpg);
+    url(../public/img/header-image.jpg);
   background-size: cover; /*Para que la imágen intente rellenar siempre lo que su padre (en mi caso 95vh)*/
   background-position: top; /*Para que la img se quede siempre tocando arriba*/
   position: relative; /*con esto funciona la posicion de las cosas de dentro del header*/
