@@ -1,5 +1,6 @@
 import "./App.css";
 import Layout from "./components/Layout";
+import SectionLastReadings from "./components/SectionLastReadings";
 
 function App() {
   return (
@@ -146,127 +147,7 @@ function App() {
             </div>
           </section>
 
-          <section className="section-last-readings">
-            <div className="u-center-text u-margin-bottom-big">
-              <h2 className="heading-secondary">Some readings</h2>
-            </div>
-            <div className="row">
-              <div className="col-1-of-3">
-                <div className="card">
-                  <div className="card__side card__side--front card_side--front-1">
-                    <div className="card__picture card__picture--1">&nbsp;</div>
-                    <h4 className="card__heading">
-                      <span className="card__heading-span card__heading-span--essential">
-                        Essential
-                      </span>
-                    </h4>
-                    <div className="card__details">
-                      <ul>
-                        <li>
-                          <b>Meditaciones</b>
-                        </li>
-                        <li>Marco Aurelio</li>
-                        <li>164 pags.</li>
-                        <li>21/02/2024</li>
-                        <li>Adrián Vacas</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="card__side card__side--back card__side--back-1">
-                    <div className="card__cta">
-                      <div className="card__book-review-box">
-                        <p className="card__book-review-title">Book Rating</p>
-                        <div className="card__book-review-value">
-                          <img src="img/4_5stars.png" alt="" />
-                        </div>
-                      </div>
-                      <a href="" className="btn btn--white">
-                        Look this review
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-1-of-3">
-                <div className="card">
-                  <div className="card__side card__side--front card_side--front-2">
-                    <div className="card__picture card__picture--2">&nbsp;</div>
-                    <h4 className="card__heading">
-                      <span className="card__heading-span card__heading-span--optional">
-                        Optional
-                      </span>
-                    </h4>
-                    <div className="card__details">
-                      <ul>
-                        <li>
-                          <b>El arte de la guerra</b>
-                        </li>
-                        <li>Sun Tzu</li>
-                        <li>93 pags.</li>
-                        <li>22/01/2024</li>
-                        <li>Sergio Casanova</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="card__side card__side--back card__side--back-1">
-                    <div className="card__cta">
-                      <div className="card__book-review-box">
-                        <p className="card__book-review-title">Book Rating</p>
-                        <div className="card__book-review-value">
-                          <img src="img/3_5stars.png" alt="" />
-                        </div>
-                      </div>
-                      <a href="" className="btn btn--white">
-                        Look this review
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-1-of-3">
-                <div className="card">
-                  <div className="card__side card__side--front card_side--front-3">
-                    <div className="card__picture card__picture--3">&nbsp;</div>
-                    <h4 className="card__heading">
-                      <span className="card__heading-span card__heading-span--unnecessary">
-                        Unnecessary
-                      </span>
-                    </h4>
-                    <div className="card__details">
-                      <ul>
-                        <li>
-                          <b>Principios</b>
-                        </li>
-                        <li>Rai Dalio</li>
-                        <li>608 pags.</li>
-                        <li>31/10/2023</li>
-                        <li>Sergio Casanova</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="card__side card__side--back card__side--back-1">
-                    <div className="card__cta">
-                      <div className="card__book-review-box">
-                        <p className="card__book-review-title">Book Rating</p>
-                        <div className="card__book-review-value">
-                          <img src="img/1_5stars.png" alt="" />
-                        </div>
-                      </div>
-                      <a href="" className="btn btn--white">
-                        Look this review
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="section-last-readings__button-box">
-              <a href="" className="btn btn--brown2">
-                Go to all readings
-              </a>
-            </div>
-          </section>
-
+          <SectionLastReadings></SectionLastReadings>
           <section className="section-contact">
             <div className="row">
               <div className="contact">

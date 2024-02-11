@@ -58,7 +58,7 @@
       0 100%
     ); //lo cuplicamos con webkit para que funcine en todos los navegadores
 
-    &--1 {
+    /*&--1 {
       background-position: 0 -11rem; //cubre el contenido que tenga la card. Si solo esta esto, coge un trozo muy pequeño porque todavía no hay contenido.
       background-image: url(../public/img/meditaciones.png); //solo subimos un nivel (../) porque realmente esto estará en el styles.css una vez compilado
     }
@@ -69,7 +69,7 @@
     &--3 {
       background-position: 0 -3rem;
       background-image: url(../public/img/principios-negro.jpg);
-    }
+    }*/
   }
 
   &__heading {

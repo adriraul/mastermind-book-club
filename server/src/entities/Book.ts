@@ -1,5 +1,3 @@
-// server/src/entities/Book.ts
-
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { Review } from "./Review";
 
@@ -24,12 +22,18 @@ export class Book {
   synopsis!: string;
 
   @Column({ type: "date" })
-  date!: Date;
+  presentationDate!: Date;
+
+  @Column()
+  label!: string;
+
+  @Column({ default: false })
+  outstanding!: Boolean;
 
   @Column()
   recommendedBy!: string;
 
-  @Column()
+  @Column("decimal", { precision: 3, scale: 1 })
   rating!: number;
 
   @Column()

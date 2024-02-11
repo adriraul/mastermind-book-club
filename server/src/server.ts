@@ -3,11 +3,13 @@
 import express, { Request, Response } from "express";
 import { AppDataSource } from "../config/data-source";
 import { Book } from "./entities/Book";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(cors());
 
 app.listen(PORT, async () => {
   try {
@@ -17,6 +19,19 @@ app.listen(PORT, async () => {
     app.get("/getBooks", async (req: Request, res: Response) => {
       try {
         const books = await AppDataSource.manager.find(Book, {
+          relations: ["reviews"],
+        });
+        res.json(books);
+      } catch (error) {
+        console.error("Error al obtener libros:", error);
+        res.status(500).json({ error: "Error interno del servidor" });
+      }
+    });
+
+    app.get("/getOutstandingBooks", async (req: Request, res: Response) => {
+      try {
+        const books = await AppDataSource.manager.find(Book, {
+          where: { outstanding: true },
           relations: ["reviews"],
         });
         res.json(books);

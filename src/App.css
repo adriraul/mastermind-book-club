@@ -353,16 +353,19 @@ body {
     background-size: cover;
     height: 50%;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
-    .card__picture--1 {
-      background-position: 0 -11rem;
-      background-image: url(../public/img/meditaciones.png); }
-    .card__picture--2 {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    /*&--1 {
+      background-position: 0 -11rem; //cubre el contenido que tenga la card. Si solo esta esto, coge un trozo muy pequeño porque todavía no hay contenido.
+      background-image: url(../public/img/meditaciones.png); //solo subimos un nivel (../) porque realmente esto estará en el styles.css una vez compilado
+    }
+    &--2 {
       background-position: 0 -3rem;
-      background-image: url(../public/img/el-arte-de-la-guerra.jpg); }
-    .card__picture--3 {
+      background-image: url(../public/img/el-arte-de-la-guerra.jpg);
+    }
+    &--3 {
       background-position: 0 -3rem;
-      background-image: url(../public/img/principios-negro.jpg); }
+      background-image: url(../public/img/principios-negro.jpg);
+    }*/ }
   .card__heading {
     font-size: 1.3rem;
     font-weight: 500;
