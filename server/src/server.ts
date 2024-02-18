@@ -20,6 +20,9 @@ app.listen(PORT, async () => {
       try {
         const books = await AppDataSource.manager.find(Book, {
           relations: ["reviews"],
+          order: {
+            presentationDate: "DESC",
+          },
         });
         res.json(books);
       } catch (error) {

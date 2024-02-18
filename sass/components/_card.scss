@@ -246,8 +246,8 @@
       &-1 {
         background-image: linear-gradient(
           to right bottom,
-          $color-brown-2,
-          $color-brown-4
+          $color-brown-4,
+          $color-black
         );
       }
     }
@@ -278,7 +278,7 @@
     text-align: right;
     color: $color-white;
     position: absolute;
-    top: 15rem;
+    top: 16rem;
     right: 20rem;
     width: 65%;
 

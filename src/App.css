@@ -521,7 +521,7 @@ body {
     .card__medium__side--back {
       transform: rotateY(180deg); }
       .card__medium__side--back-1 {
-        background-image: linear-gradient(to right bottom, #e8d7c6, #897968); }
+        background-image: linear-gradient(to right bottom, #897968, #000); }
   .card__medium:hover .card__medium__side--front {
     transform: rotateY(-180deg); }
   .card__medium:hover .card__medium__side--back {
@@ -538,7 +538,7 @@ body {
     text-align: right;
     color: #fff;
     position: absolute;
-    top: 15rem;
+    top: 16rem;
     right: 20rem;
     width: 65%; }
     @media (max-width: 56.25em) {
@@ -634,6 +634,117 @@ body {
         margin-top: 2rem;
         padding-top: 2rem; } }
 
+.search__container {
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50rem;
+  height: 8rem;
+  margin-bottom: 5rem; }
+  @media (max-width: 56.25em) {
+    .search__container {
+      margin-top: -5rem; } }
+  .search__container .search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: #897968;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4); }
+    .search__container .search:hover {
+      cursor: pointer; }
+    .search__container .search::before {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: 2rem;
+      right: 0;
+      bottom: 0;
+      left: 2rem;
+      width: 12px;
+      height: 2px;
+      background: white;
+      transform: rotate(45deg);
+      transition: all 0.5s; }
+    .search__container .search::after {
+      content: "";
+      position: absolute;
+      margin: auto;
+      top: -5px;
+      right: 0;
+      bottom: 0;
+      left: -5px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid white;
+      transition: all 0.5s; }
+  .search__container input {
+    font-family: "Lato", sans-serif;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: #cdb199;
+    color: white;
+    padding: 0 6.5rem 0 2rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 0 0.5rem 0 #897968, 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em; }
+    .search__container input:hover {
+      cursor: pointer; }
+    .search__container input:focus {
+      width: 50rem;
+      opacity: 1;
+      cursor: text; }
+      @media (max-width: 56.25em) {
+        .search__container input:focus {
+          width: 40rem; } }
+    .search__container input:focus ~ .search {
+      right: -50rem;
+      background: #897968;
+      z-index: 6; }
+      @media (max-width: 56.25em) {
+        .search__container input:focus ~ .search {
+          right: -32.5rem; } }
+      .search__container input:focus ~ .search::before {
+        top: 0;
+        left: 0;
+        width: 2rem; }
+      .search__container input:focus ~ .search::after {
+        top: 0;
+        left: 0;
+        width: 2rem;
+        height: 0.2rem;
+        border: none;
+        background: white;
+        border-radius: 0%;
+        transform: rotate(-45deg); }
+    .search__container input::placeholder {
+      color: white;
+      opacity: 0.5;
+      font-weight: bolder; }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(60, 53, 45, 0.5), rgba(137, 121, 104, 0.5)), url(../public/img/header-image.jpg);
@@ -683,17 +794,17 @@ body {
   /*Para que la img se quede siempre tocando arriba*/
   position: relative;
   /*con esto funciona la posicion de las cosas de dentro del header*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 12vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 12vh, 0 100%);
   /*se puede personalizar por una web*/ }
   @media (max-width: 56.25em) {
     .readings-header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); } }
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 11vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 11vh, 0 100%); } }
   @media (max-width: 37.5em) {
     .readings-header {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
-      clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); } }
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 11vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 11vh, 0 100%); } }
   .readings-header__logo-box {
     position: absolute;
     top: 2.5rem;
@@ -1025,7 +1136,7 @@ body {
 
 .section-all-readings {
   background-color: #f7f7f7;
-  padding: 20rem 0 20rem 0;
+  padding: 16rem 0 20rem 0;
   margin-top: -12rem; }
   .section-all-readings__button-box {
     margin-top: 2rem;
