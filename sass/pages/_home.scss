@@ -19,7 +19,7 @@
       rgba($color-brown-5, 0.5),
       rgba($color-brown-4, 0.5)
     ),
-    url(../img/features-image.png);
+    url(../public/img/features-image.png);
   background-size: cover;
   margin-top: -12rem;
 
@@ -50,6 +50,21 @@
   }
 }
 
+.section-all-readings {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0 20rem 0;
+  margin-top: -12rem;
+
+  &__button-box {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  @include respond(tab-port) {
+    padding: 20rem 0 15rem 0;
+  }
+}
+
 .section-contact {
   padding: 15rem 0;
   background-image: linear-gradient(
@@ -58,7 +73,7 @@
       rgba($color-brown-5, 0.8) 90%,
       rgba($color-brown-5, 1) 100%
     ),
-    url(../img/library-bg-2.png);
+    url(../public/img/library-bg-2.png);
   background-size: cover;
 
   @include respond(tab-land) {
@@ -73,7 +88,7 @@
       rgba($color-white, 0.8) 50%,
       transparent 50%
     ),
-    url(../img/library-bg-3.jpg);
+    url(../public/img/library-bg-3.jpg);
   background-size: cover;
   border-radius: 10px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
@@ -85,7 +100,7 @@
         rgba($color-white, 0.8) 65%,
         transparent 65%
       ),
-      url(../img/library-bg-3.jpg);
+      url(../public/img/library-bg-3.jpg);
   }
 
   @include respond(tab-port) {
@@ -95,7 +110,7 @@
         rgba($color-white, 0.8) 100%,
         transparent 100%
       ),
-      url(../img/library-bg-3.jpg);
+      url(../public/img/library-bg-3.jpg);
   }
 
   &__form {

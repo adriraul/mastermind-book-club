@@ -58,18 +58,18 @@
       0 100%
     ); //lo cuplicamos con webkit para que funcine en todos los navegadores
 
-    &--1 {
+    /*&--1 {
       background-position: 0 -11rem; //cubre el contenido que tenga la card. Si solo esta esto, coge un trozo muy pequeño porque todavía no hay contenido.
-      background-image: url(../img/meditaciones.png); //solo subimos un nivel (../) porque realmente esto estará en el styles.css una vez compilado
+      background-image: url(../public/img/meditaciones.png); //solo subimos un nivel (../) porque realmente esto estará en el styles.css una vez compilado
     }
     &--2 {
       background-position: 0 -3rem;
-      background-image: url(../img/el-arte-de-la-guerra.jpg);
+      background-image: url(../public/img/el-arte-de-la-guerra.jpg);
     }
     &--3 {
       background-position: 0 -3rem;
-      background-image: url(../img/principios-negro.jpg);
-    }
+      background-image: url(../public/img/principios-negro.jpg);
+    }*/
   }
 
   &__heading {
@@ -128,6 +128,227 @@
       list-style: none;
       width: 80%;
       margin: 0 auto; //para centrar automaticamente todo
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  //back side styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; //esto es para que el botón quepa en una línea. Esto hace grande lo de dentro de las tarjetas.
+    text-align: center;
+  }
+
+  &__book-review-box {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 12rem;
+  }
+
+  &__book-review-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: $color-brown-4;
+    font-weight: 800;
+  }
+
+  &__book-review-value {
+    margin: 1rem;
+    img {
+      width: 50%;
+      text-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    }
+  }
+
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: 50rem;
+      position: relative;
+      box-shadow: none;
+
+      &--back {
+        height: 23rem;
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        margin-top: -2rem;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0);
+    }
+
+    //back side styling
+    &__cta {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+    }
+
+    &__book-review-box {
+      text-align: center;
+      color: $color-white;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
+  }
+}
+
+.card__medium {
+  perspective: 150rem; //para que se vea el efecto de la perspectiva al rotar
+  -moz-perspective: 150rem; //para que funcione en firefox
+  position: relative;
+  height: 35rem; //esto realmente ya se lo indicamos en el __side, pero es un clearfix para que no se pierda el tamaño al rotar
+
+  &__side {
+    height: 35rem;
+    transition: all 0.8s ease;
+    position: absolute; //esto es para que no se pongan una debajo de otra (el front y el back), es peara que se pongan superpuestas.
+    //el position absolute
+    top: 0;
+    left: 0;
+    width: 100%; //esto es para que ocupe el 100% del padre
+    backface-visibility: hidden; //es para no ver la parte de detrás
+    border-radius: 3px;
+    overflow: hidden; //esto es para que la foto no salga de los límites (que no se vea lo que sale)
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-brown-2,
+          $color-brown-4
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(
+      -180deg
+    ); //es en negativo porque realmente cuando ya está la carta la mitad de girada, la otra parte está girando en la otra dirección
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  //estilos FRONT SIDE
+  &__picture {
+    background-size: cover;
+    height: 50%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 15rem;
+    right: 20rem;
+    width: 65%;
+
+    @include respond(tab-port) {
+      right: 38rem;
+      top: 22rem;
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      right: 29rem;
+      top: 22rem;
+      font-size: 1.7rem;
+    }
+  }
+
+  &__heading-span {
+    padding: 0.5rem 1rem;
+    -webkit-box-decoration-break: clone; //esto es por si el textos e separa en dos líneas, que en cada línea tenga el padding tanto izquierda como derecha
+    box-decoration-break: clone;
+    border-radius: 5px;
+
+    @include respond(tab-port) {
+      padding: 1rem 1.5rem;
+    }
+
+    &--essential {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-essential, 0.85)
+      );
+    }
+
+    &--recommended {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-recommended, 0.85)
+      );
+    }
+
+    &--optional {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-optional, 0.85)
+      );
+    }
+
+    &--unnecessary {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-unnecessary, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; //para centrar automaticamente todo
+      margin-top: -1rem;
+
+      @include respond(tab-port) {
+        margin-top: 0;
+      }
+
       li {
         text-align: center;
         font-size: 1.5rem;
