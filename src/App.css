@@ -154,6 +154,43 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
+.readings-heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*para que las animaciones no hagan movimientos raros al final*/ }
+  .readings-heading-primary--main {
+    display: block;
+    font-size: 7rem;
+    font-weight: 800;
+    letter-spacing: 2.5rem;
+    line-height: 1.25;
+    animation-name: moveInLeft;
+    animation-duration: 1s; }
+    @media (max-width: 56.25em) {
+      .readings-heading-primary--main {
+        letter-spacing: 1.5rem;
+        font-size: 6rem; } }
+    @media (max-width: 37.5em) {
+      .readings-heading-primary--main {
+        letter-spacing: 1.5rem;
+        font-size: 4rem; } }
+  .readings-heading-primary--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    animation-name: moveInRight;
+    animation-duration: 1s; }
+    @media (max-width: 56.25em) {
+      .readings-heading-primary--sub {
+        letter-spacing: 0.5rem;
+        font-size: 2.5rem; } }
+    @media (max-width: 37.5em) {
+      .readings-heading-primary--sub {
+        letter-spacing: 0.5rem;
+        font-size: 2rem; } }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -201,6 +238,17 @@ body {
   color: #777;
   font-weight: 600; }
   .btn--white::after {
+    background-color: white; }
+
+.btn--white__small {
+  background-color: #fff;
+  color: #777;
+  font-weight: 600;
+  padding: 1rem 2.5rem; }
+  .btn--white__small, .btn--white__small:link, .btn--white__small:visited {
+    padding: 1.5rem 4rem;
+    font-size: 1.2rem; }
+  .btn--white__small::after {
     background-color: white; }
 
 .btn--brown2 {
@@ -452,6 +500,140 @@ body {
         margin-top: 2rem;
         padding-top: 2rem; } }
 
+.card__medium {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 35rem; }
+  .card__medium__side {
+    height: 35rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__medium__side--front {
+      background-color: #fff; }
+    .card__medium__side--back {
+      transform: rotateY(180deg); }
+      .card__medium__side--back-1 {
+        background-image: linear-gradient(to right bottom, #e8d7c6, #897968); }
+  .card__medium:hover .card__medium__side--front {
+    transform: rotateY(-180deg); }
+  .card__medium:hover .card__medium__side--back {
+    transform: rotateY(0); }
+  .card__medium__picture {
+    background-size: cover;
+    height: 50%;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+  .card__medium__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 15rem;
+    right: 20rem;
+    width: 65%; }
+    @media (max-width: 56.25em) {
+      .card__medium__heading {
+        right: 38rem;
+        top: 22rem;
+        font-size: 2rem; } }
+    @media (max-width: 37.5em) {
+      .card__medium__heading {
+        right: 29rem;
+        top: 22rem;
+        font-size: 1.7rem; } }
+  .card__medium__heading-span {
+    padding: 0.5rem 1rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    border-radius: 5px; }
+    @media (max-width: 56.25em) {
+      .card__medium__heading-span {
+        padding: 1rem 1.5rem; } }
+    .card__medium__heading-span--essential {
+      background-image: linear-gradient(to right bottom, rgba(232, 215, 198, 0.85), rgba(2, 139, 0, 0.85)); }
+    .card__medium__heading-span--recommended {
+      background-image: linear-gradient(to right bottom, rgba(232, 215, 198, 0.85), rgba(123, 210, 53, 0.85)); }
+    .card__medium__heading-span--optional {
+      background-image: linear-gradient(to right bottom, rgba(232, 215, 198, 0.85), rgba(254, 183, 3, 0.85)); }
+    .card__medium__heading-span--unnecessary {
+      background-image: linear-gradient(to right bottom, rgba(232, 215, 198, 0.85), rgba(253, 64, 44, 0.85)); }
+  .card__medium__details ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -1rem; }
+    @media (max-width: 56.25em) {
+      .card__medium__details ul {
+        margin-top: 0; } }
+    .card__medium__details ul li {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1rem; }
+      .card__medium__details ul li:not(:last-child) {
+        border-bottom: 1px solid #eee; }
+  .card__medium__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__medium__book-review-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 12rem; }
+  .card__medium__book-review-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #897968;
+    font-weight: 800; }
+  .card__medium__book-review-value {
+    margin: 1rem; }
+    .card__medium__book-review-value img {
+      width: 50%;
+      text-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+  @media (max-width: 56.25em) {
+    .card__medium {
+      height: auto;
+      border-radius: 3px;
+      background-color: #fff;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+      .card__medium__side {
+        height: 50rem;
+        position: relative;
+        box-shadow: none; }
+        .card__medium__side--back {
+          height: 23rem;
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+          margin-top: -2rem; }
+      .card__medium:hover .card__medium__side--front {
+        transform: rotateY(0); }
+      .card__medium:hover .card__medium__side--back {
+        transform: rotateY(0); }
+      .card__medium__cta {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%; }
+      .card__medium__book-review-box {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        padding-top: 2rem; } }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(60, 53, 45, 0.5), rgba(137, 121, 104, 0.5)), url(../public/img/header-image.jpg);
@@ -487,6 +669,48 @@ body {
   .header__text-box {
     position: absolute;
     top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* se transporta él en sí mismo para centrarlo, porque realmente el top y el left definen donde empieza, y ahora estaba empezando en el 50-50 pero no quiere decir centrado)*/
+    text-align: center; }
+
+.readings-header {
+  height: 15vh;
+  background-image: linear-gradient(to right bottom, rgba(60, 53, 45, 0.5), rgba(137, 121, 104, 0.5)), url(../public/img/header-image.jpg);
+  background-size: cover;
+  /*Para que la imágen intente rellenar siempre lo que su padre (en mi caso 95vh)*/
+  background-position: top;
+  /*Para que la img se quede siempre tocando arriba*/
+  position: relative;
+  /*con esto funciona la posicion de las cosas de dentro del header*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*se puede personalizar por una web*/ }
+  @media (max-width: 56.25em) {
+    .readings-header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); } }
+  @media (max-width: 37.5em) {
+    .readings-header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); } }
+  .readings-header__logo-box {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem; }
+  .readings-header__logo {
+    height: 10rem; }
+    @media (max-width: 56.25em) {
+      .readings-header__logo {
+        height: 7.5rem; } }
+    @media (max-width: 37.5em) {
+      .readings-header__logo {
+        top: 1.5rem;
+        left: 1.5rem;
+        height: 5rem; } }
+  .readings-header__text-box {
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* se transporta él en sí mismo para centrarlo, porque realmente el top y el left definen donde empieza, y ahora estaba empezando en el 50-50 pero no quiere decir centrado)*/
@@ -797,6 +1021,17 @@ body {
     text-align: center; }
   @media (max-width: 56.25em) {
     .section-last-readings {
+      padding: 20rem 0 15rem 0; } }
+
+.section-all-readings {
+  background-color: #f7f7f7;
+  padding: 20rem 0 20rem 0;
+  margin-top: -12rem; }
+  .section-all-readings__button-box {
+    margin-top: 2rem;
+    text-align: center; }
+  @media (max-width: 56.25em) {
+    .section-all-readings {
       padding: 20rem 0 15rem 0; } }
 
 .section-contact {

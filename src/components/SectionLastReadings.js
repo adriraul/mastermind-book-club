@@ -40,6 +40,9 @@ const SectionLastReadings = () => {
             recommendedBy={book.recommendedBy}
             rating={book.rating}
             imageUrl={book.imageUrl}
+            rowClass={"col-1-of-3"}
+            cardClass={"card"}
+            customButtonClass={""}
           />
         ))}
       </div>
