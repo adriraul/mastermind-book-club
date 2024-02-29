@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { Book } from "./Book";
-import { Rating } from "./Rating";
+import { Category } from "./Category";
+import { Member } from "./Member";
 
 @Entity()
 export class Review {
@@ -8,17 +9,17 @@ export class Review {
   id!: number;
 
   @Column()
-  user!: string;
-
-  @Column()
   description!: string;
 
-  @Column()
+  @Column("numeric", { precision: 3, scale: 1 })
   rating!: number;
 
   @ManyToOne(() => Book, (book) => book.reviews)
   book!: Book;
 
-  @ManyToOne(() => Rating, (rating) => rating.reviews)
-  ratingDetails!: Rating;
+  @ManyToOne(() => Category)
+  category!: Category;
+
+  @ManyToOne(() => Member, (member) => member.reviews)
+  member!: Member;
 }

@@ -2,7 +2,9 @@ import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 import { Book } from "../src/entities/Book";
 import { Review } from "../src/entities/Review";
-import { Rating } from "../src/entities/Rating";
+import { Category } from "../src/entities/Category";
+import { Member } from "../src/entities/Member";
+
 dotenv.config();
 
 export const AppDataSource = new DataSource({
@@ -14,7 +16,7 @@ export const AppDataSource = new DataSource({
   database: "mastermind-book-club-database",
   synchronize: true,
   logging: false,
-  entities: [Book, Review, Rating],
+  entities: [Book, Review, Category, Member],
   migrations: [],
   migrationsTableName: "migrations",
   subscribers: [],

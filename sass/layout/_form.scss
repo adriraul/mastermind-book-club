@@ -91,3 +91,24 @@
     transform: translateY(-4rem);
   }
 }
+
+.admin__form {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  &__input,
+  &__textarea,
+  &__select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    resize: none;
+  }
+
+  &__button {
+    margin: 1rem;
+  }
+}

@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import { Review } from "./Review";
 
 @Entity()
-export class Rating {
+export class Member {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -10,11 +10,11 @@ export class Rating {
   name!: string;
 
   @Column()
-  description!: string;
+  surnames!: string;
 
   @Column()
-  score!: number;
+  alias!: string;
 
-  @OneToMany(() => Review, (review) => review.ratingDetails)
+  @OneToMany(() => Review, (review) => review.member)
   reviews!: Review[];
 }

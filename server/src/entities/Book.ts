@@ -1,5 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  ManyToOne,
+} from "typeorm";
 import { Review } from "./Review";
+import { Member } from "./Member";
 
 @Entity()
 export class Book {
@@ -30,10 +37,10 @@ export class Book {
   @Column({ default: false })
   outstanding!: Boolean;
 
-  @Column()
-  recommendedBy!: string;
+  @ManyToOne(() => Member)
+  recommendedBy!: Member;
 
-  @Column("decimal", { precision: 3, scale: 1 })
+  @Column("numeric", { precision: 3, scale: 1 })
   rating!: number;
 
   @Column()

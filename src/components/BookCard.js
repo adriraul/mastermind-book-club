@@ -15,6 +15,10 @@ const BookCard = ({
 }) => {
   const parts = presentationDate.split("-");
   const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+  let roundedRating = Math.round(rating * 2) / 2;
+  roundedRating = Math.min(5, Math.max(0, roundedRating));
+  roundedRating =
+    roundedRating % 1 === 0 ? `${roundedRating}.0` : roundedRating.toString();
 
   return (
     <div className={`${rowClass}`}>
@@ -45,7 +49,7 @@ const BookCard = ({
               </li>
               <li>{author}</li>
               <li>{pages} pags.</li>
-              <li>{recommendedBy}</li>
+              <li>{`${recommendedBy.name} ${recommendedBy.surnames}`}</li>
               <li>{formattedDate}</li>
             </ul>
           </div>
@@ -58,7 +62,9 @@ const BookCard = ({
               <p className={`${cardClass}__book-review-title`}>Book Rating</p>
               <div className={`${cardClass}__book-review-value`}>
                 <img
-                  src={`img/${rating.toString().replace(".", "_")}stars.png`}
+                  src={`img/${roundedRating
+                    .toString()
+                    .replace(".", "_")}stars.png`}
                   alt={`${rating} stars`}
                 />
               </div>
