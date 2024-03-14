@@ -40,7 +40,7 @@ export class Book {
   @ManyToOne(() => Member)
   recommendedBy!: Member;
 
-  @Column("numeric", { precision: 3, scale: 1 })
+  @Column("numeric", { precision: 5, scale: 2 })
   rating!: number;
 
   @Column()

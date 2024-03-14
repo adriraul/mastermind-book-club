@@ -4,7 +4,7 @@ const Footer = ({ children }) => (
   <>
     <footer className="footer">
       <div className="footer__logo-box">
-        <img src="img/logo3.png" alt="Full logo" className="footer__logo" />
+        <img src="/img/logo3.png" alt="Full logo" className="footer__logo" />
       </div>
       <div className="row">
         <div className="col-1-of-2">

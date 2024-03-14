@@ -65,6 +65,164 @@
   }
 }
 
+.section-book-detail {
+  background-color: $color-grey-light-1;
+  padding: 18rem 0 10rem 0;
+  margin-top: -12rem;
+
+  &__button-box {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  @include respond(tab-port) {
+    padding: 14rem 0 15rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 10rem 0 15rem 0;
+  }
+
+  &--left {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(phone) {
+      margin-bottom: -8rem;
+    }
+
+    .book-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-1rem) scale(1.03);
+      }
+    }
+  }
+
+  &--right {
+    flex: 1;
+  }
+
+  &__nav-button {
+    max-width: 114rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    margin-top: -3rem;
+
+    @include respond(tab-port) {
+      margin-top: 0rem;
+      margin-left: 5rem;
+    }
+
+    @include respond(phone) {
+      margin-top: 4rem;
+      margin-left: 5rem;
+      margin-bottom: -2rem;
+    }
+  }
+}
+
+.book-rating {
+  display: inline-flex;
+  &__image {
+    margin-left: 0.7rem;
+    max-width: 40%;
+    text-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateY(-0.5rem) scale(1.02);
+    }
+  }
+  &__number {
+    font-weight: 800;
+    font-size: 2rem;
+  }
+}
+
+.section-category-reviews {
+  background-color: $color-grey-light-1;
+  padding: 0rem 10rem 10rem 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include respond(tab-land) {
+    padding: 0rem 0 10rem 0;
+  }
+
+  @include respond(tab-port) {
+    margin-top: -10rem;
+  }
+
+  @include respond(phone) {
+    margin-top: -15rem;
+  }
+
+  .category-review-item {
+    flex: 0 0 calc(25% - 1rem);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(even) {
+      margin-left: 2rem;
+    }
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @include respond(tab-port) {
+      flex: 0 0 calc(50% - 1rem);
+      justify-content: right;
+    }
+
+    @include respond(phone) {
+      flex: 0 0 calc(100% - 1rem);
+      justify-content: center;
+    }
+  }
+
+  .category-review-item-rating {
+    flex: 0 0 calc(25% - 1rem);
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    @include respond(tab-port) {
+      flex: 0 0 calc(50% - 1rem);
+      justify-content: left;
+    }
+
+    @include respond(phone) {
+      flex: 0 0 calc(100% - 1rem);
+      justify-content: center;
+    }
+  }
+}
+
 .section-contact {
   padding: 15rem 0;
   background-image: linear-gradient(

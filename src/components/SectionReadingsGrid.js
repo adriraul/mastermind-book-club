@@ -31,7 +31,7 @@ const SectionReadingsGrid = () => {
       (book) =>
         book.title.toLowerCase().includes(searchTerm) ||
         book.author.toLowerCase().includes(searchTerm) ||
-        book.recommendedBy.toLowerCase().includes(searchTerm)
+        book.recommendedBy.name.toLowerCase().includes(searchTerm)
     );
     setFilteredBooks(filteredResults);
     setTotalRows(Math.ceil(filteredResults.length / 4));
@@ -49,6 +49,7 @@ const SectionReadingsGrid = () => {
           rowBooks.push(
             <BookCard
               key={book.id}
+              id={book.id}
               title={book.title}
               author={book.author}
               pages={book.pages}

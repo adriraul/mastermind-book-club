@@ -35,6 +35,25 @@ app.listen(PORT, async () => {
       }
     });
 
+    app.get("/getBookById/:id", async (req: Request, res: Response) => {
+      try {
+        const bookId = parseInt(req.params.id);
+        const book = await AppDataSource.manager.findOne(Book, {
+          where: { id: bookId },
+          relations: ["reviews", "recommendedBy", "reviews.category"],
+        });
+
+        if (!book) {
+          return res.status(404).json({ error: "Libro no encontrado" });
+        }
+
+        res.json(book);
+      } catch (error) {
+        console.error("Error al obtener libro por ID:", error);
+        res.status(500).json({ error: "Error interno del servidor" });
+      }
+    });
+
     app.get("/getOutstandingBooks", async (req: Request, res: Response) => {
       try {
         const books = await AppDataSource.manager.find(Book, {
@@ -183,7 +202,7 @@ app.listen(PORT, async () => {
           totalRating += ratingValue;
         }
         const averageRating = totalRating / reviews.length;
-        const roundedRating = Math.round(averageRating * 10) / 10;
+        const roundedRating = parseFloat(averageRating.toFixed(2));
 
         book.rating = roundedRating;
 

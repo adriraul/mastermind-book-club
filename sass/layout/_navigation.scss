@@ -28,12 +28,8 @@
   }
 
   &__background {
-    height: 5rem;
-    width: 5rem;
     border-radius: 50%;
     position: fixed;
-    top: 5.5rem;
-    right: 5.5rem;
     background-image: radial-gradient($color-brown-3, $color-brown-5);
     z-index: 1000;
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
@@ -53,14 +49,18 @@
   }
 
   &__nav {
-    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    //height: 30vh;
     position: fixed;
     z-index: 1500;
     opacity: 0;
     width: 0;
-    top: 4rem;
-    right: 4rem;
-    height: 50%;
     background-image: radial-gradient($color-brown-3, $color-brown-4);
     overflow: hidden;
     transition: all 0.3s;
@@ -69,7 +69,6 @@
 
   &__list {
     position: absolute;
-    //top: 30%; // este es el top para cuando el __nav ocupe el 100% del height
     top: 45%;
     left: 50%;
     transform: translate(-25%, -50%);
@@ -84,9 +83,10 @@
   &__link {
     &:link,
     &:visited {
-      display: inline-block; //esto se añade para que funcione el translateX del hover y el active
-      font-size: 1.5rem;
+      display: inline-block;
+      font-size: 2rem;
       font-weight: 400;
+      letter-spacing: 0.25rem;
       padding: 1rem;
       color: $color-white;
       text-decoration: none;
@@ -117,7 +117,7 @@
 
   &__checkbox:checked ~ &__nav {
     opacity: 1;
-    width: 40vh;
+    width: 33vw;
   }
 
   //icono

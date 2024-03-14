@@ -118,4 +118,21 @@
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     transform: translateY(0);
   }
+
+  &__leer-mas {
+    font-size: $default-font-size;
+    font-weight: 700;
+    color: $color-brown-4;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px;
+    transition: all 0.2s;
+    &:hover {
+      background-color: $color-brown-4;
+      color: $color-white;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      transform: translateY(-2px);
+      cursor: pointer;
+    }
+  }
 }

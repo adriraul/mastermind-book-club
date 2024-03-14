@@ -11,7 +11,7 @@ export class Review {
   @Column()
   description!: string;
 
-  @Column("numeric", { precision: 3, scale: 1 })
+  @Column("numeric", { precision: 5, scale: 2 })
   rating!: number;
 
   @ManyToOne(() => Book, (book) => book.reviews)

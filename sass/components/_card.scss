@@ -437,3 +437,74 @@
     }
   }
 }
+
+.recomendation-label {
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 16rem;
+    right: 20rem;
+    width: 65%;
+
+    @include respond(tab-port) {
+      right: 38rem;
+      top: 22rem;
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      right: 29rem;
+      top: 22rem;
+      font-size: 1.7rem;
+    }
+  }
+
+  &__heading-span {
+    padding: 0.5rem 1rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 2rem;
+
+    @include respond(tab-port) {
+      padding: 1rem 1.5rem;
+    }
+
+    &--essential {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-essential, 0.85)
+      );
+    }
+
+    &--recommended {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-recommended, 0.85)
+      );
+    }
+
+    &--optional {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-optional, 0.85)
+      );
+    }
+
+    &--unnecessary {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-brown-2, 0.85),
+        rgba($color-unnecessary, 0.85)
+      );
+    }
+  }
+}

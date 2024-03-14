@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const BookCard = ({
+  id,
   title,
   author,
   pages,
@@ -15,7 +17,7 @@ const BookCard = ({
 }) => {
   const parts = presentationDate.split("-");
   const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
-  let roundedRating = Math.round(rating * 2) / 2;
+  let roundedRating = Math.round((rating / 2) * 2) / 2;
   roundedRating = Math.min(5, Math.max(0, roundedRating));
   roundedRating =
     roundedRating % 1 === 0 ? `${roundedRating}.0` : roundedRating.toString();
@@ -69,9 +71,12 @@ const BookCard = ({
                 />
               </div>
             </div>
-            <a href="" className={`btn btn--white${customButtonClass}`}>
+            <Link
+              to={`/book-details/${id}`}
+              className={`btn btn--white${customButtonClass}`}
+            >
               Look this review
-            </a>
+            </Link>
           </div>
         </div>
       </div>
