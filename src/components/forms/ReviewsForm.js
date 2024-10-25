@@ -6,6 +6,7 @@ const ReviewsForm = () => {
   const [selectedMemberId, setSelectedMemberId] = useState("");
   const [selectedBookId, setSelectedBookId] = useState("");
   const [selectedCategoryId, setSelectedCategoryId] = useState("");
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
   const [members, setMembers] = useState([]);
   const [books, setBooks] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -55,6 +56,14 @@ const ReviewsForm = () => {
     fetchCategories();
   }, []);
 
+  useEffect(() => {
+    setIsButtonEnabled(
+      selectedMemberId !== "" ||
+        selectedBookId !== "" ||
+        selectedCategoryId !== ""
+    );
+  }, [selectedMemberId, selectedBookId, selectedCategoryId]);
+
   const handleRatingChange = (e) => {
     const { value } = e.target;
 
@@ -86,8 +95,7 @@ const ReviewsForm = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-
-      //const data = await response.json();
+      setIsButtonEnabled(false);
     } catch (error) {
       console.error("Error creating review:", error);
     }
@@ -173,7 +181,11 @@ const ReviewsForm = () => {
         </label>
       </div>
 
-      <button className="admin__form__button" type="submit">
+      <button
+        className="admin__form__button"
+        type="submit"
+        disabled={!isButtonEnabled}
+      >
         Crear
       </button>
     </form>
