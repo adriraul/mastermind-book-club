@@ -50,7 +50,6 @@ const BookCard = ({
                 <b>{title}</b>
               </li>
               <li>{author}</li>
-              <li>{pages} pags.</li>
               <li>{`${recommendedBy.name} ${recommendedBy.surnames}`}</li>
               <li>{formattedDate}</li>
             </ul>

@@ -590,15 +590,26 @@ body {
   .card__medium__details ul {
     list-style: none;
     width: 80%;
-    margin: 0 auto;
-    margin-top: -1rem; }
+    margin: 0 auto; }
     @media (max-width: 56.25em) {
       .card__medium__details ul {
         margin-top: 0; } }
     .card__medium__details ul li {
       text-align: center;
       font-size: 1.5rem;
-      padding: 1rem; }
+      padding: 0.25rem; }
+      .card__medium__details ul li:first-child {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        min-height: 6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center; }
       .card__medium__details ul li:not(:last-child) {
         border-bottom: 1px solid #eee; }
   .card__medium__cta {

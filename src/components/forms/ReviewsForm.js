@@ -151,7 +151,7 @@ const ReviewsForm = () => {
             <option value="">Select a member</option>
             {members.map((member) => (
               <option key={member.id} value={member.id}>
-                {member.name}
+                {member.name + " " + member.surnames}
               </option>
             ))}
           </select>
